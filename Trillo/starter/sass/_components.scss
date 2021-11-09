@@ -131,8 +131,7 @@
       margin-bottom: 0.3rem;
     }
 
-    &:active::before
-    {
+    &:active::before {
       background-color: $primary-light;
     }
 
@@ -176,10 +175,6 @@
     margin-right: 2rem;
     fill: $grey-light;
   }
-
-  &__text {
-
-  }
 }
 
 //Single Component
@@ -189,3 +184,55 @@
   color: $grey-light-fourth;
   padding: 2rem;
 }
+
+//Gallery
+.gallery {
+
+  display: flex;
+
+  &__photo {
+    display: block;
+    width: 100%;
+  }
+}
+
+
+//Overview
+.overview {
+
+  display: flex;
+  border-bottom: .2rem solid $grey-light-third;
+
+  &__heading {
+
+  }
+
+  &__stars {
+    margin-right: auto;
+  }
+
+  &__icon-star,
+  &__icon-pin {
+    height: 1.75rem;
+    width: 1.75rem;
+    fill: $primary;
+  }
+
+  &__location {
+
+  }
+
+  &__overview__rating {
+    &-average {
+
+    }
+
+    &-count {
+
+    }
+
+  }
+
+}
+
+

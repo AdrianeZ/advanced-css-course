@@ -60,7 +60,6 @@ body {
     flex: 0 0 18%;
     padding: 1.5rem 0; }
   .content .hotel-view {
-    background-color: #c69963;
     flex: 1;
     height: 80rem; }
 
@@ -191,3 +190,19 @@ body {
   text-align: center;
   color: #ccc;
   padding: 2rem; }
+
+.gallery {
+  display: flex; }
+  .gallery__photo {
+    display: block;
+    width: 100%; }
+
+.overview {
+  display: flex;
+  border-bottom: 0.2rem solid #f0eeee; }
+  .overview__stars {
+    margin-right: auto; }
+  .overview__icon-star, .overview__icon-pin {
+    height: 1.75rem;
+    width: 1.75rem;
+    fill: #eb2f64; }
