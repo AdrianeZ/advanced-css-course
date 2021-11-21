@@ -52,8 +52,15 @@
   }
 
   .user-reviews {
-    background-color: green;
+    //text-align: center;
+    font-size: 1.4rem;
+    background-color: white;
     flex: 1;
+
+    .btn-container
+    {
+      text-align: center;
+    }
   }
 }
 

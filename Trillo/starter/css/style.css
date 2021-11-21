@@ -75,8 +75,11 @@ body {
     padding: 3rem;
     margin-right: 4rem; }
   .details .user-reviews {
-    background-color: green;
+    font-size: 1.4rem;
+    background-color: white;
     flex: 1; }
+    .details .user-reviews .btn-container {
+      text-align: center; }
 
 .header__logo {
   height: 3.25rem;
@@ -265,8 +268,13 @@ body {
   outline: none;
   transition: all .3s;
   background-color: transparent; }
+  .btn-inline span {
+    font-size: 2rem;
+    transition: margin-left .3s; }
   .btn-inline:hover {
     color: #333; }
+    .btn-inline:hover span {
+      margin-left: .4rem; }
   .btn-inline:focus {
     outline: none;
     animation: pulsate 1.5s infinite; }
@@ -322,3 +330,43 @@ body {
     box-sizing: content-box; }
     .reccomend__photo:not(:last-child) {
       margin-right: -1rem; }
+
+.review {
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+  position: relative; }
+  .review__text {
+    background-color: white; }
+  .review__user {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 2rem; }
+    .review__user-info {
+      margin-right: auto;
+      margin-left: 2rem; }
+    .review__user-name {
+      font-weight: bold; }
+    .review__user-date {
+      font-style: italic;
+      font-size: 1.2rem; }
+  .review__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%; }
+  .review__rating {
+    display: flex;
+    align-items: center;
+    font-size: 2.3rem;
+    color: #eb2f64; }
+  .review::before {
+    top: 0;
+    left: 0;
+    position: absolute;
+    font-size: 10rem;
+    content: "\201c";
+    color: #f4f2f2;
+    opacity: 0.6;
+    line-height: 0.8;
+    font-family: sans-serif; }
