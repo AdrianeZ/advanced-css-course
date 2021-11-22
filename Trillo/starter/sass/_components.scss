@@ -10,6 +10,11 @@
     align-items: center;
     justify-content: center;
     flex: 0 0 40%;
+    background-color: $grey-light-second;
+    @media only screen and (max-width: $min-mobile) {
+      order: 1;
+      flex: 0 0 100%;
+    }
   }
 
   &__input {
@@ -19,7 +24,6 @@
     color: inherit;
     border: none;
     padding: .7rem 2rem;
-    border-radius: 10rem;
     background-color: $grey-light-second;
     transition: all .8s;
     margin-right: -3rem;
@@ -123,12 +127,28 @@
   font-size: 1.6rem;
   list-style: none;
 
+  @media only screen and (max-width: $tablet) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+
+
 
   &__item {
     position: relative;
 
+    @media only screen and (max-width: $tablet) {
+      flex: 1;
+    }
+
     &:not(:last-child) {
       margin-bottom: 0.3rem;
+      @media only screen and (max-width: $tablet) {
+        margin: 0;
+      }
     }
 
     &:active::before {
@@ -167,6 +187,16 @@
     padding: 1.5rem 3rem;
     display: flex;
     align-items: center;
+    @media only screen and (max-width: $tablet) {
+      justify-content: center;
+      padding: 1.5rem 3rem;
+    }
+
+    @media only screen and (max-width: $mobile) {
+      flex-direction: column;
+      padding: 1rem;
+    }
+
   }
 
   &__icon {
@@ -174,6 +204,22 @@
     width: 1.75rem;
     margin-right: 2rem;
     fill: $grey-light;
+    @media only screen and (max-width: $tablet) {
+     height: 1.2rem;
+     width: 1.2rem;
+    }
+
+    @media only screen and (max-width: $mobile) {
+      margin-right:0;
+      margin-bottom: .2rem;
+    }
+  }
+
+  &__text
+  {
+    @media only screen and (max-width: $tablet) {
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -183,6 +229,10 @@
   text-align: center;
   color: $grey-light-fourth;
   padding: 2rem;
+
+  @media only screen and (max-width: $tablet) {
+   display: none;
+  }
 }
 
 //Gallery
@@ -204,17 +254,26 @@
   align-items: center;
   border-bottom: $line;
 
+
   &__heading {
     font-size: 2.25rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 300;
     padding: 1.5rem 3rem;
+    @media only screen and (max-width: $mobile) {
+      font-size: 1rem;
+      padding:.5rem;
+      text-align: center;
+    }
   }
 
   &__stars {
     margin-right: auto;
     display: flex;
+    @media only screen and (max-width: $min-mobile) {
+      margin-left: auto;
+    }
   }
 
   &__icon-star,
@@ -248,14 +307,24 @@
     justify-content: center;
     align-items: center;
 
+    @media only screen and (max-width: $mobile) {
+     padding: 0.5rem;
+    }
+
     &-average {
       font-size: 2.25rem;
       font-weight: 300;
+      @media only screen and (max-width: $mobile) {
+        font-size: 1.5rem;
+      }
     }
 
     &-count {
       font-size: .8rem;
       text-transform: uppercase;
+      @media only screen and (max-width: $mobile) {
+       font-size: .6rem;
+      }
     }
   }
 
@@ -276,8 +345,7 @@
   transition: all .3s;
   background-color: transparent;
 
-  span
-  {
+  span {
     font-size: 2rem;
     transition: margin-left .3s;
   }
@@ -285,8 +353,7 @@
   &:hover {
     color: $grey-dark;
 
-    span
-    {
+    span {
       margin-left: .4rem;
     }
   }
@@ -363,6 +430,10 @@
   color: $grey-dark-second;
 
 
+  &__friends
+  {
+    display: flex;
+  }
 
   &__photo {
     height: 4rem;
@@ -372,65 +443,63 @@
     box-sizing: content-box;
 
     &:not(:last-child) {
-      margin-right: -1rem;
+      margin-right: -2rem;
     }
   }
 }
 
 // user reviews component
-.review
-{
+.review {
   padding: 3rem;
+  background-color: white;
   margin-bottom: 3.5rem;
   box-shadow: $custom-shadow;
   position: relative;
-  &__text
-  {
-      background-color: white;
+  @media only screen and (max-width: $tablet) {
+    padding: 2rem;
+    margin-bottom: 3rem;
   }
 
-  &__user
-  {
+  &__text {
+    background-color: white;
+  }
+
+  &__user {
     display: flex;
     justify-content: space-between;
     align-content: center;
     margin-top: 2rem;
 
-    &-info
-    {
+    &-info {
       margin-right: auto;
-      margin-left:2rem;
+      margin-left: 2rem;
     }
 
-    &-name
-    {
+    &-name {
       font-weight: bold;
     }
 
-    &-date
-    {
+    &-date {
       font-style: italic;
       font-size: 1.2rem;
     }
   }
 
-  &__photo
-  {
+  &__photo {
     height: 4.5rem;
-    width:4.5rem;
+    width: 4.5rem;
     border-radius: 50%;
   }
-  &__rating
-  {
+
+  &__rating {
     display: flex;
     align-items: center;
     font-size: 2.3rem;
-    color:$primary;
+    color: $primary;
   }
 
-  &::before
-  {
-    top:0;
+  &::before {
+    top: 0;
     left: 0;
     position: absolute;
     font-size: 10rem;
@@ -440,7 +509,69 @@
     line-height: 0.8;
     font-family: sans-serif;
   }
-
 }
 
+//Call to Action
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+
+  @media only screen and (max-width: $tablet) {
+    padding: 2.5rem 0;
+  }
+
+  &__book-now {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+}
+
+//Call to Action
+.btn {
+
+  font-size: 1.5rem;
+  border: none;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  background-color: $primary;
+  color: white;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+
+  & > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all .25s;
+  }
+
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+
+  &__invisible {
+    position: absolute;
+    left: 0;
+    top: -100%;
+    padding: 2rem 0;
+
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__invisible {
+    top: 0;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate infinite 1s;
+  }
+}
 
